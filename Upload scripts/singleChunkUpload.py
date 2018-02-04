@@ -55,12 +55,6 @@ user = 'AnaplanCertificate ' + str(base64.b64encode((
 url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
        f'files/{fileData["id"]}')
 
-getHeaders = {
-    'Authorization': user,
-
-    'Content-type': 'application/json',
-}
-
 putHeaders = {
     'Authorization': user,
 
