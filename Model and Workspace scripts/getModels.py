@@ -15,17 +15,17 @@
 import requests
 import base64
 
-# Replace with your workspace Guid or leave blank if you don't know it
+# Insert your workspace Guid or leave blank if you don't know it
 wGuid = ''
 
-# Replace with the Anaplan account email being used
+# Insert the Anaplan account email being used
 username = ''
 
 # If using cert auth, replace cert.pem with your pem converted certificate
 # filename. Otherwise, remove this line.
 cert = open('cert.pem').read()
 
-# If using basic auth, replace with your password. Otherwise, remove this line.
+# If using basic auth, insert your password. Otherwise, remove this line.
 password = ''
 
 # Uncomment your authentication method (cert or basic). Remove the other.

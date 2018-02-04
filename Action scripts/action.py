@@ -19,13 +19,13 @@ import base64
 import sys
 import json
 
-# Replace with your workspace Guid
+# Insert your workspace Guid
 wGuid = ''
-# Replace with your model Guid
+# Insert your model Guid
 mGuid = ''
-# Replace with the Anaplan account email being used
+# Insert the Anaplan account email being used
 username = ''
-
+# Replace with your action metadata
 actionData = {
   "id" : "",
   "name" : ""

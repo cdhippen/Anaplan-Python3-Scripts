@@ -23,15 +23,17 @@ import string
 import os
 import json
 
-# Replace with your workspace Guid
+# Insert your workspace Guid
 wGuid = ''
-# Replace with your model Guid
+# Insert your model Guid
 mGuid = ''
-# Replace with the Anaplan account email being used
+# Insert the Anaplan account email being used
 username = ''
-# Replace with the file prefix used when the file was split.
+# Insert the file prefix used when the file was split.
 chunkFilePrefix = ''
-# Change chunkCount value to number of chunks to upload, -1 if number unknown
+# Set chunkCount value to number of chunks you will be uploading, or to -1 if
+# you do not know the number of chunks you will be uploading. Replace the rest
+# with your file metadata
 fileData = {
   'id' : '',
   'name' : '',
@@ -48,7 +50,7 @@ fileData = {
 # filename. Otherwise, remove this line.
 cert = open('cert.pem').read()
 
-# If using basic auth, replace with your password. Otherwise, remove this line.
+# If using basic auth, insert your password. Otherwise, remove this line.
 password = ''
 
 # Uncomment your authentication method (cert or basic). Remove the other.

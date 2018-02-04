@@ -17,20 +17,20 @@ import requests
 import base64
 import json
 
-# Replace with your workspace Guid
+# Insert your workspace Guid
 wGuid = ''
-# Replace with your model Guid
+# Insert your model Guid
 mGuid = ''
-# Replace with your import ID
+# Insert your import ID
 importID = ''
-# Replace with the Anaplan account email being used
+# Insert the Anaplan account email being used
 username = ''
 
 # If using cert auth, replace cert.pem with your pem converted certificate
 # filename. Otherwise, remove this line.
 cert = open('cert.pem').read()
 
-# If using basic auth, replace with your password. Otherwise, remove this line.
+# If using basic auth, insert your password. Otherwise, remove this line.
 password = ''
 
 # Uncomment your authentication method (cert or basic). Remove the other.

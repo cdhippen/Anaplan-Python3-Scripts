@@ -19,13 +19,13 @@ import base64
 import sys
 import json
 
-# Replace with your workspace Guid
+# Insert your workspace Guid
 wGuid = ''
-# Replace with your model Guid
+# Insert your model Guid
 mGuid = ''
-# Replace with the Anaplan account email being used
+# Insert the Anaplan account email being used
 username = ''
-
+# Replace with your export metadata
 exportData = {
   "id" : "",
   "name" : "",
@@ -36,7 +36,7 @@ exportData = {
 # filename. Otherwise, remove this line.
 cert = open('cert.pem').read()
 
-# If using basic auth, replace with your password. Otherwise, remove this line.
+# If using basic auth, insert your password. Otherwise, remove this line.
 password = ''
 
 # Uncomment your authentication method (cert or basic). Remove the other.
