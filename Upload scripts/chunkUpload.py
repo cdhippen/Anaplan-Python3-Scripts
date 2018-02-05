@@ -80,7 +80,7 @@ postHeaders = {
 putHeaders = {
     'Authorization': user,
 
-    'Accept': 'application/octet-stream'
+    'Content-Type': 'application/octet-stream'
 }
 
 startFrom = ''
