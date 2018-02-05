@@ -48,9 +48,7 @@ url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
        f'files/{fileID}/chunks')
 
 getHeaders = {
-    'Authorization': user,
-
-    'Content-type': 'application/json',
+    'Authorization': user
 }
 
 downloadHeaders = {

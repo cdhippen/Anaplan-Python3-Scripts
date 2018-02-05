@@ -44,15 +44,7 @@ url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
        f'exports/{exportID}/tasks')
 
 getHeaders = {
-    'Authorization': user,
-
-    'Accept': 'application/json'
-}
-
-dumpHeaders = {
-    'Authorization': user,
-
-    'Content-Type': 'text/csv'
+    'Authorization': user
 }
 
 # Gets all taskIDs associated with the export, and asks which the user wants to
@@ -83,22 +75,13 @@ exportStatus = requests.get(url + f'/{i}',
 with open('exportStatus.json', 'wb') as f:
     f.write(exportStatus.text.encode('utf-8'))
     
-# Loads the status file, and reports status as well as writing any failure
-# dump to a csv
+# Loads the status file, and reports status
 with open('exportStatus.json', 'r') as f:
     f2 = json.load(f)
     
-if f2['taskState'] == 'IN_PROGRESS':
+if f2['taskState'] != 'COMPLETED':
     print('In progress. See "exportStatus.json"')
     print('Progress: ' + str(f2['progress']))
     print('Task Status: ' + f2['taskState'])
-elif f2['result']['failureDumpAvailable'] == True:
-    print('Failure dump available. Writing to "exportDump.csv"')
-    getFailDump = requests.get(url + f'/{i}/dump',
-                               headers=getHeaders)
-    with open('exportDump.csv', 'wb') as f:
-        f.write(getFailDump.text.encode('utf-8'))
-    print('Task Status: ' + f2['taskState'])
 else:
-    print('No failures')
     print('Task Status: ' + f2['taskState'])

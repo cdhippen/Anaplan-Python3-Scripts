@@ -37,9 +37,7 @@ user = 'AnaplanCertificate ' + str(base64.b64encode((
 #                                         ).encode('utf-8')).decode('utf-8'))
 
 getHeaders = {
-    'Authorization': user,
-
-    'Content-type': 'application/json',
+    'Authorization': user
 }
 
 getActions = requests.get(f'https://api.anaplan.com/1/3/workspaces/{wGuid}/' +

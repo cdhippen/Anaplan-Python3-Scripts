@@ -45,7 +45,7 @@ user = 'AnaplanCertificate ' + str(base64.b64encode((
 url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
        f'files/{fileID}')
 
-getHeaders = {
+delHeaders = {
     'Authorization': user,
 
     'Content-type': 'application/json',
@@ -53,5 +53,5 @@ getHeaders = {
 
 print(f'Deleting file')
 delete = requests.delete(url,
-                         headers=getHeaders)
+                         headers=delHeaders)
 print('File delete status code: ' + str(delete.status_code))

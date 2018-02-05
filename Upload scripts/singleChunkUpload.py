@@ -58,7 +58,7 @@ url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
 putHeaders = {
     'Authorization': user,
 
-    'Accept': 'application/octet-stream'
+    'Content-Type': 'application/octet-stream'
 }
 
 # Opens the data file (filData['name'] by default) and encodes it to utf-8

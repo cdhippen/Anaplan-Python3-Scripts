@@ -36,9 +36,7 @@ user = 'AnaplanCertificate ' + str(base64.b64encode((
 #                                         ).encode('utf-8')).decode('utf-8'))
 
 getHeaders = {
-    'Authorization': user,
-
-    'Content-type': 'application/json',
+    'Authorization': user
 }
 
 if wGuid:

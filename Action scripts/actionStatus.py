@@ -44,9 +44,7 @@ url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
        f'actions/{actionID}/tasks')
 
 getHeaders = {
-    'Authorization': user,
-
-    'Accept': 'application/json'
+    'Authorization': user
 }
 
 # Gets all taskIDs associated with the action, and asks which the user wants to
@@ -76,3 +74,16 @@ actionStatus = requests.get(url + f'/{i}',
 
 with open('actionStatus.json', 'wb') as f:
     f.write(actionStatus.text.encode('utf-8'))
+
+# Loads the status file, and reports status as well as writing any failure
+# dump to a csv
+with open('actionStatus.json', 'r') as f:
+    f2 = json.load(f)
+    
+if f2['taskState'] != 'COMPLETED':
+    print('In progress. See "actionStatus.json"')
+    print('Progress: ' + str(f2['progress']))
+    print('Task Status: ' + f2['taskState'])
+else:
+    print('Task Status: ' + f2['taskState'])
+

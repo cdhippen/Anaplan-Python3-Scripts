@@ -44,15 +44,7 @@ url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
        f'imports/{importID}/tasks')
 
 getHeaders = {
-    'Authorization': user,
-
-    'Accept': 'application/json'
-}
-
-dumpHeaders = {
-    'Authorization': user,
-
-    'Content-Type': 'text/csv'
+    'Authorization': user
 }
 
 # Gets all taskIDs associated with the import, and asks which the user wants to
@@ -89,14 +81,14 @@ with open('importStatus.json', 'wb') as f:
 with open('importStatus.json', 'r') as f:
     f2 = json.load(f)
     
-if f2['taskState'] == "IN_PROGRESS":
+if f2['taskState'] != "COMPLETE":
     print('In progress. See "importStatus.json"')
     print('Progress: ' + str(f2['progress']))
     print('Task Status: ' + f2['taskState'])
 elif f2['result']['failureDumpAvailable']:
     print('Failure dump available. Writing to "importDump.csv"')
     getFailDump = requests.get(url + f'/{i}/dump',
-                               headers=dumpHeaders)
+                               headers=getHeaders)
     print(getFailDump.status_code)
     with open('importDump.csv', 'wb') as f:
         f.write(getFailDump.text.encode('utf-8'))
