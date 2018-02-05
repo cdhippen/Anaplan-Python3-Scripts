@@ -48,7 +48,7 @@ user = 'AnaplanCertificate ' + str(base64.b64encode((
 url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
        f'actions/{actionData["id"]}/tasks')
 
-getHeaders = {
+postHeaders = {
     'Authorization': user,
 
     'Content-type': 'application/json',
@@ -58,7 +58,7 @@ getHeaders = {
 print(url)
 action = requests.post(url,
                        data='{"localeName": "en_US"}',
-                       headers=getHeaders)
+                       headers=postHeaders)
 
 print('Action status code: ' + str(action.status_code))
 with open('postAction.json', 'wb') as f:
