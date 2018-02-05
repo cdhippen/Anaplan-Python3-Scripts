@@ -63,7 +63,7 @@ user = 'AnaplanCertificate ' + str(base64.b64encode((
 url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
        f'files/{fileData["id"]}')
 
-getHeaders = {
+postCountHeaders = {
     'Authorization': user,
 
     'Content-type': 'application/json',
@@ -88,7 +88,7 @@ if os.path.isfile('chunkStop.txt'):
     startFrom = open('chunkStop.txt', 'r').read()
 else:
     postChunkCount = requests.post(url,
-                                   headers=getHeaders,
+                                   headers=postCountHeaders,
                                    json=fileData)
 
 # Generates the chunk file names based on chunk count
