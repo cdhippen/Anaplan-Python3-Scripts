@@ -48,7 +48,7 @@ url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
 delHeaders = {
     'Authorization': user,
 
-    'Content-type': 'application/json',
+    'Content-type': 'application/json'
 }
 
 print(f'Deleting file')
