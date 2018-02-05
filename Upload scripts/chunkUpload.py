@@ -72,8 +72,6 @@ postCountHeaders = {
 postHeaders = {
     'Authorization': user,
 
-    'Accept': 'application/json',
-
     'Content-Type': 'application/json'
 }
 
