@@ -66,7 +66,7 @@ url = (f'https://api.anaplan.com/1/3/workspaces/{wGuid}/models/{mGuid}/' +
 postCountHeaders = {
     'Authorization': user,
 
-    'Content-type': 'application/json',
+    'Content-type': 'application/json'
 }
 
 postHeaders = {
