@@ -62,11 +62,11 @@ putHeaders = {
 }
 
 # Opens the data file (filData['name'] by default) and encodes it to utf-8
-dataFile = open(fileData['name'], 'r').read()).encode('utf-8')
+dataFile = open(fileData['name'], 'r').read().encode('utf-8')
 
 fileUpload = requests.put(url,
                           headers=putHeaders,
-                          data=(dataFile)
+                          data=(dataFile))
 if fileUpload.ok:
     print('File Upload Successful.')
 else:
